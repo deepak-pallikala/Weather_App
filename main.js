@@ -15,7 +15,7 @@ btn.addEventListener('click', function()
   fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputval.value+'&appid='+apik)
   .then(res => res.json())
 
-
+//Displaying the weather of a Particular City
   .then(data => 
   {
     var nameval = data['name']
@@ -28,6 +28,7 @@ btn.addEventListener('click', function()
     wind.innerHTML = `Wind Speed: <span>${wndspd} km/h<span>`
 
   })
+    //If the user input is wrong then we are displaying that the user entered wrong city name
 
   .catch(err => alert('You entered Wrong city name'))
 })
